@@ -1,9 +1,11 @@
 <template>
-  <div>
-    111
-  </div>
+home
 </template>
 
 <script>
 
 </script>
+
+<style scoped>
+
+</style>
