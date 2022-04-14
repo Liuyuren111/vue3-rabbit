@@ -69,12 +69,14 @@ ul {
   position: relative;
 }
 
+// 单行省略号
 .ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
+// 两行行省略号
 .ellipsis-2 {
   word-break: break-all;
   text-overflow: ellipsis;

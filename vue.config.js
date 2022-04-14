@@ -6,10 +6,14 @@ module.exports = defineConfig({
     loaderOptions: {
       scss: {
         additionalData: `
-        @import "@/assets/scsss/variables.scss";
-        @import "@/assets/scsss/mixin.scss";
+        @import "@/assets/scss/variables.scss";
+        @import "@/assets/scss/mixin.scss";
         `
       }
     }
+  },
+  chainWebpack: (config) =>{
+    // 修复HMR（热更新）
+    config.resolve.symlinks(true);
   }
 })

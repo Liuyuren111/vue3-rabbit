@@ -1,22 +1,31 @@
 <script setup>
-function logout(a) {
+import {useUserState} from "@/store/user";
+import {storeToRefs} from "pinia";
+
+const userStore = useUserState()
+
+// 解构赋值会失去响应式，解决办法使用 storeToRefs()
+const {userObj} = storeToRefs(userStore)
+
+const logout = (a) => {
   console.log(a)
 }
 </script>
 
 <template>
-  <nav class="app-top-nav">
+  <nav class="app-top">
     <div class="container">
       <ul>
-        <template>
+        <template v-if="userObj.token">
           <li>
             <RouterLink to="/member/home">
-              <i class="iconfont icon-user"></i>username
+              <i class="iconfont icon-user"></i>
+              {{userObj.account}}
             </RouterLink>
           </li>
           <li><a href="javascript:" @click="logout(this)">退出登录</a></li>
         </template>
-        <template>
+        <template v-else>
           <li><RouterLink to="/login">请先登录</RouterLink></li>
           <li><a href="javascript:">免费注册</a></li>
         </template>
@@ -33,7 +42,7 @@ function logout(a) {
 </template>
 
 <style scoped lang="scss">
-.app-top-nav {
+.app-top {
   background: #333;
   ul {
     display: flex;
