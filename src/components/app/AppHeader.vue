@@ -41,7 +41,7 @@
       height: 132px;
       display: block;
       text-indent: -9999px;
-      background: url("../assets/images/logo.png") no-repeat center 18px / contain;;
+      background: url("../../assets/images/logo.png") no-repeat center 18px / contain;;
     }
   }
   .container{
